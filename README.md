@@ -20,3 +20,41 @@ To tackle this challenge, this project proposes a novel simulation-driven design
 
 ### Getting started
 To use the code in the repo effectively, one can add the above "environment.yaml" file as their preferred environment in Anaconda or can follow the below steps to install [pyMAPDL](https://github.com/ansys/pymapdl), [pyDPF](https://github.com/ansys/pydpf-core), and [Ax](https://github.com/facebook/Ax):
+Install the latest release from PyPi with:
+
+```bash
+pip install ansys-mapdl-core
+```
+To verify the successful installation:
+
+```bash
+from ansys.mapdl.core import launch_mapdl
+mapdl = launch_mapdl()
+print(mapdl)
+```
+To visualize using Visualization Toolkit (VTK):
+
+```bash
+pip install vtk
+```
+### pyDPF
+
+To install PyDPF-Core, in a Python environment, run this command:
+```bash
+pip install ansys-dpf-core
+```
+To verify the installation, run the example:
+```bash
+from ansys.dpf import core as dpf
+from ansys.dpf.core import examples
+model = dpf.Model(examples.download_crankshaft())
+print(model)
+```
+### Ax
+Install Ax:
+```bash
+conda install pytorch torchvision -c pytorch  # OSX only
+```
+```bash
+pip3 install ax-platform  # all systems
+```
