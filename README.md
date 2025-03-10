@@ -58,13 +58,17 @@ conda install pytorch torchvision -c pytorch  # OSX only
 ```bash
 pip3 install ax-platform  # all systems
 ```
-Here is a simple flow chart:
-
+### General optimization work flow
 ```mermaid
-graph TD;
-    A-->B;
-    B-->C;
-    C-->D;
-    D-->E;
-    D<-->C
-```
+flowchart TD
+    A[Start] --> B["Define the objective f(x)"]
+    B --> C["Define initial sample"]
+    C --> D["Initialize GP model"]
+    D --> E["Select and evaluate xᵢ"]
+    E --> F["Update D"]
+    F --> G{"Is i = 100?"}
+    G -- Yes --> H["Plot results and output best"]
+    H --> I[End]
+    G -- No --> J["Evaluate f(x)"]
+    J --> K["Update i"]
+    K --> D
