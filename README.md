@@ -58,3 +58,12 @@ conda install pytorch torchvision -c pytorch  # OSX only
 ```bash
 pip3 install ax-platform  # all systems
 ```
+Here is a simple flow chart:
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
